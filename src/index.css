@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  
+  /* Brand Red (mapping old green variable names to crimson/burgundy for clean, instant theme change) */
+  --color-brand-green-50: #fff5f5;
+  --color-brand-green-100: #ffe3e3;
+  --color-brand-green-200: #ffd0d0;
+  --color-brand-green-300: #ffb0b0;
+  --color-brand-green-400: #ff8080;
+  --color-brand-green-500: #fa5050;
+  --color-brand-green-600: #e02525;
+  --color-brand-green-700: #c51d1d;
+  --color-brand-green-800: #990011; /* Royal Crimson Red */
+  --color-brand-green-900: #6f000d; /* Deep Royal Burgundy */
+  --color-brand-green-950: #3b0005; /* Luxurious Velvet Maroon */
+
+  --color-gold-50: #fdfaf2;
+  --color-gold-100: #faeed3;
+  --color-gold-200: #f3daa5;
+  --color-gold-300: #ebbf6d;
+  --color-gold-400: #e2a03c;
+  --color-gold-500: #c5a880; /* Custom Luxury Gold */
+  --color-gold-600: #b3946d;
+  --color-gold-700: #8c704f;
+  --color-gold-800: #665039;
+  --color-gold-900: #473727;
+  --color-gold-950: #2b2117;
+
+  /* Custom background overrides for Ivory and Velvet Pitch-Black theme */
+  --color-stone-50: #fdfcf7;   /* Ivory background in light mode */
+  --color-stone-100: #f7f5ef;  /* Light warm paper background for sections */
+  
+  --color-zinc-950: #050203;   /* Velvet pitch black in dark mode */
+  --color-zinc-900: #0b0507;   /* Slightly lighter velvet wine black */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0b0507;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5a880;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b3946d;
+}
+
+/* Elegant glassmorphism presets */
+.glass-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-light {
+  background: rgba(20, 16, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-dark {
+  background: rgba(24, 20, 21, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Service/content cards — auto switch light ↔ dark */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+}
+
+.dark .glass-card {
+  background: rgba(45, 38, 42, 0.92);  /* medium charcoal — readable & warm */
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.22);
+  box-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.55);
+}
+
+/* Keep old class names as aliases for backward compat */
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-card-light {
+  background: rgba(45, 38, 42, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.22);
+  box-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.55);
+}
+
+.glass-card-dark {
+  background: rgba(45, 38, 42, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.22);
+  box-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.55);
+}
+
+/* Global Dark Mode Text Contrast & Readability Enhancements */
+.dark .text-stone-500,
+.dark .text-stone-600,
+.dark .text-stone-700 {
+  color: #d6d3d1 !important; /* stone-300 — readable warm-gray on dark bg */
+}
+
+.dark .text-stone-400 {
+  color: #e7e5e4 !important; /* stone-200 — bright off-white */
+}
+
+/* Ensure headings always pop in dark cards */
+.dark .glass-card h3,
+.dark .glass-card-light h3,
+.dark .glass-card-dark h3 {
+  color: #fafaf9 !important;
+}
+
+/* Custom styles for image transitions */
+.gallery-zoom img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-zoom:hover img {
+  transform: scale(1.08);
+}
