@@ -156,17 +156,28 @@ export default function Gallery() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Show More Button */}
-        {filteredItems.length > visibleCount && (
-          <div className="flex justify-center mt-16">
+        {/* Show More / Show Less Buttons */}
+        <div className="flex justify-center gap-4 mt-16">
+          {filteredItems.length > visibleCount && (
             <button
               onClick={() => setVisibleCount((prev) => prev + 12)}
               className="px-8 py-3.5 rounded-xl border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-zinc-950 dark:hover:text-zinc-950 font-semibold tracking-wider font-sans text-sm sm:text-base transition-all duration-300 shadow-md cursor-pointer hover:shadow-lg hover:shadow-gold-500/20"
             >
               Show More
             </button>
-          </div>
-        )}
+          )}
+          {visibleCount > 12 && (
+            <button
+              onClick={() => {
+                setVisibleCount(12);
+                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className="px-8 py-3.5 rounded-xl border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-zinc-950 dark:hover:text-zinc-950 font-semibold tracking-wider font-sans text-sm sm:text-base transition-all duration-300 shadow-md cursor-pointer hover:shadow-lg hover:shadow-gold-500/20"
+            >
+              Show Less
+            </button>
+          )}
+        </div>
 
         {/* Lightbox Modal */}
         <AnimatePresence>
