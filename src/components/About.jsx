@@ -202,7 +202,7 @@ export default function About() {
                 </span>
               </div>
               <div className="text-center sm:text-left flex flex-col">
-                <Counter endValue={15} suffix="+" />
+                <Counter endValue={5} suffix="+" />
                 <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-stone-500 dark:text-stone-400 mt-2">
                   Years Exp.
                 </span>

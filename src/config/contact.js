@@ -23,7 +23,7 @@ export const PHONE_DISPLAY =
   import.meta.env.VITE_PHONE_DISPLAY?.trim() || PHONE_DISPLAY_DEFAULT;
 
 export const EMAIL_ADDRESS =
-  import.meta.env.VITE_EMAIL?.trim() || 'info@shaheventsvadodara.com';
+  import.meta.env.VITE_EMAIL?.trim() || 'shahevents28@gmail.com';
 
 export const BUSINESS_HOURS = 'Mon – Sat, 10 AM to 8 PM';
 
