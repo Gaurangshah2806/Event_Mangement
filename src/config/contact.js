@@ -44,7 +44,8 @@ export const SOCIAL_LINKS = {
   google: 'https://share.google/gwh7Us88wV1cYAIfW',
 };
 
-export const GOOGLE_MAPS_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(OFFICE_ADDRESS.full)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+export const GOOGLE_MAPS_EMBED_URL =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.221562793488!2d73.25105867458682!3d22.307458879681427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fcf2b9ecfba45%3A0x4578c1512899397e!2sShah%20Events%20Decorations%20Vadodara!5e0!3m2!1sen!2sin!4v1781164321810!5m2!1sen!2sin';
 
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 
