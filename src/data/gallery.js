@@ -149,13 +149,6 @@ export const galleryItems = [
   },
   {
     id: 'c5',
-    title: 'Corporate Lounge Decor',
-    category: 'Corporate',
-    image: '/images/gallery/corporate5.jpeg',
-    description: 'Modern executive seating lounge setup for networking events.'
-  },
-  {
-    id: 'c6',
     title: 'Exhibition Stall Design',
     category: 'Corporate',
     image: '/images/gallery/corporate6.jpeg',
